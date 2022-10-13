@@ -26,7 +26,7 @@
 
 				<li class="dropdown user user-menu"><a href="#"
 					class="dropdown-toggle" data-toggle="dropdown"> <img
-						src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
+						src="${pageContext.request.contextPath}/img/avatar5.png"
 						class="user-image" alt="User Image"> <span class="hidden-xs">
 							<security:authentication property="principal.username" />
 					</span>
@@ -35,7 +35,7 @@
 					<ul class="dropdown-menu">
 						<!-- User image -->
 						<li class="user-header"><img
-							src="${pageContext.request.contextPath}/img/user2-160x160.jpg"
+							src="${pageContext.request.contextPath}/img/avatar5.png"
 							class="img-circle" alt="User Image"></li>
 
 						<h3 style="text-align: center">你好啊! <text style="color: #00a7d0"><%=session.getAttribute("userName")%></text></h3>
