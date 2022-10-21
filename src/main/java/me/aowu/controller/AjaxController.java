@@ -1,10 +1,16 @@
 package me.aowu.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import me.aowu.domain.Comment;
 import me.aowu.service.CommentService;
 import me.aowu.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @RestController
 @RequestMapping("ajax")
@@ -15,6 +21,7 @@ public class AjaxController {
 
     @Autowired
     private CommentService commentService;
+
 
     @RequestMapping("delUser")
     public String delUser(String username){
@@ -37,6 +44,19 @@ public class AjaxController {
         return msg;
     }
 
+
+    @RequestMapping("getAllComment")
+    public String getAllComment(HttpServletResponse response) throws JsonProcessingException {
+        String msg="no";
+
+        List<Comment> list = commentService.list();
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        String s = objectMapper.writeValueAsString(list);
+
+        System.out.println("Get!!!!");
+        return s;
+    }
 
 
     @RequestMapping("delComment")

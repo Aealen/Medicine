@@ -6,6 +6,8 @@
 
 
 
+
+
     <!--全局初始化参数-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
@@ -25,6 +27,7 @@
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>

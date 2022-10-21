@@ -23,15 +23,20 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping("login")
-    public String login(String username, String password, HttpSession session){
+    public ModelAndView login(String username, String password, HttpSession session){
         User user = userService.login(username, password);
+        ModelAndView modelAndView = new ModelAndView();
         if (user!=null){
             session.setAttribute("user",user);
             session.setAttribute("userName",user.getUsername());
-            return "redirect:/index.jsp";
+            modelAndView.setViewName("main");
+
+            //return "redirect:/user/list";
         }else {
-            return "redirect:/pages/login.jsp";
+            modelAndView.setViewName("login");
+            //return "redirect:/pages/login.jsp";
         }
+        return modelAndView;
     }
 
 

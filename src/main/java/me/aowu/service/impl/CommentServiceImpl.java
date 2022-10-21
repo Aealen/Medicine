@@ -28,5 +28,11 @@ public class CommentServiceImpl implements CommentService {
         return update;
     }
 
+    @Override
+    public int addComment(String context, String writer, String email, String time) {
+        int i = commentDao.addComment(context, writer, email, time);
+        return i;
+    }
+
 
 }

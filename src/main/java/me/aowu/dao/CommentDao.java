@@ -8,4 +8,6 @@ public interface CommentDao {
     List<Comment> list();
 
     int delCommentById(String cid);
+
+    int addComment(String context,String writer,String email,String time);
 }

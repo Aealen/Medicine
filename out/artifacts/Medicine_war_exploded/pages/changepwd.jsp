@@ -74,7 +74,6 @@
         function validate(){
             var pwd1=document.getElementById("newPassword").value;
             var pwd2=document.getElementById("passwordAgain").value;
-
             if (pwd1!=pwd2&&pwd2!=""){
                 $("#Tipalert").show().text("两次密码输入不一致");
                 $("#submit").attr('disabled',true);
@@ -82,8 +81,6 @@
                 $("#Tipalert").hide();
                 $("#submit").attr('disabled',false);
             }
-
-
         }
     </script>
 </head>

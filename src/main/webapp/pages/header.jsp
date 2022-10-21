@@ -3,7 +3,7 @@
 <!-- 页面头部 -->
 <script>
 	function deLog(){
-		sessionStorage.removeItem("user");
+		sessionStorage.clear();
 
 		location.replace("${pageContext.request.contextPath}/pages/login.jsp");
 	}
@@ -44,7 +44,7 @@
 						<!-- Menu Footer-->
 						<li class="user-footer">
 							<div class="pull-left">
-								<a href=changepwd.jsp class="btn btn-default btn-flat">修改密码</a>
+								<a href=${pageContext.request.contextPath}/pages/changepwd.jsp class="btn btn-default btn-flat">修改密码</a>
 							</div>
 							<div class="pull-right">
 								<a onclick="deLog()"

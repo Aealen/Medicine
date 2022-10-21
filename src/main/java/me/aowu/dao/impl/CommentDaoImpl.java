@@ -27,5 +27,11 @@ public class CommentDaoImpl implements CommentDao {
         return update;
     }
 
+    @Override
+    public int addComment(String context, String writer, String email, String time) {
+        int update = jdbcTemplate.update("insert into comment (cid,writer,content,update_time,email) value comment (null ,?,?,?,?)", writer, context, time, email);
+        return update;
+    }
+
 
 }
